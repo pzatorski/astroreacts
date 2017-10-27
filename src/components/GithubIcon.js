@@ -1,7 +1,7 @@
 import React from 'react';
 
 const GithubIcon = () => (
-  <svg width="101px" height="99px" viewBox="0 0 101 99">
+  <svg width="80px" height="78px" viewBox="0 0 101 99">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         transform="translate(-886.000000, -1396.000000)"

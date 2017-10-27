@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LoginIcon = () => (
-  <svg width="138px" height="138px" viewBox="0 0 138 138">
+  <svg width="90px" height="90px" viewBox="0 0 138 138">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         transform="translate(-651.000000, -610.000000)"

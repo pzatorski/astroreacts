@@ -1,5 +1,11 @@
 # AstroReacts
 
+## Quick Overview
+
+1. Clone the repo
+2. `yarn` or `npm install`
+3. `yarn start`
+
 ## Game 
 
 In the Astroreacts game the player flies a spacecraft in an asteroids field. The gamer must avoid flying rocks which is traversed by flying saucers. The player can move using the cursor control keys (arrow keys) on his keyboard and shoot the objects pressing the spacebar.

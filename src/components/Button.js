@@ -2,7 +2,7 @@ import React from 'react';
 
 const Button = () => (
   <div>
-    <p>YOLO</p>
+    <p>Register</p>
   </div>
 );
 

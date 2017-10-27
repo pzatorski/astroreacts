@@ -23,7 +23,7 @@ const LoginBlock = () => (
             </StyledText>
             <StyledInputUser placeholder="Username" />
             <StyledInputPassword placeholder="Password" />
-            <Button>Login</Button>
+            <Button text="Login" />
           </Centered>
           <GithubContainer>
             <Url
@@ -40,18 +40,18 @@ const LoginBlock = () => (
   </Container>
 );
 
-const StyledText = styled(Text)`margin-bottom: 6rem;`;
+const StyledText = styled(Text)`margin-bottom: 2rem;`;
 
-const StyledInputUser = styled(InputUser)`margin-bottom: 4rem;`;
+const StyledInputUser = styled(InputUser)`margin-bottom: 1rem;`;
 
-const StyledInputPassword = styled(InputPassword)`margin-bottom: 4rem;`;
+const StyledInputPassword = styled(InputPassword)`margin-bottom: 2rem;`;
 
-const Content = styled.div`padding-top: 6rem;`;
+const Content = styled.div`padding-top: 8rem;`;
 
 const Centered = styled.div`
   display: flex;
-  position: relative;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Column = styled.div`
@@ -64,6 +64,17 @@ const GithubContainer = styled.div`
   position: absolute;
   bottom: 2rem;
   right: 2rem;
+  border: 2px solid transparent;
+  border-radius: 50%;
+
+  transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+
+  &:hover {
+    border: 2px solid #ffffff;
+    background: #ffffff;
+  }
 `;
 
 const LoginContainer = styled.div`
@@ -75,10 +86,6 @@ const LoginContainer = styled.div`
   background-color: rgba(255, 173, 173, 0.1);
   align-items: center;
   flex-direction: column;
-
-  transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -webkit-transition: 0.25s ease-in-out;
 `;
 
 const LogoContainer = styled.div`

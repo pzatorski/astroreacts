@@ -7,8 +7,9 @@ const BackgroundImage = styled.div`
   position: relative;
   height: 60rem;
   background-image: url(${AstroImage});
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export default BackgroundImage;

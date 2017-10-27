@@ -4,8 +4,10 @@ import styled from 'styled-components';
 import Text from '../components/Text';
 import LoginIcon from '../components/LoginIcon';
 import GithubIcon from '../components/GithubIcon';
-import Input from '../components/Input';
+import InputPassword from '../components/InputPassword';
+import InputUser from '../components/InputUser';
 import Button from '../components/Button';
+import Url from '../components/Url';
 
 const LoginBlock = () => (
   <Container>
@@ -19,12 +21,18 @@ const LoginBlock = () => (
             <StyledText size="m" bold color="#FE7483">
               Member Login
             </StyledText>
-            <StyledInput />
-            <StyledInput />
+            <StyledInputUser placeholder="Username" />
+            <StyledInputPassword placeholder="Password" />
             <Button>Login</Button>
           </Centered>
           <GithubContainer>
-            <GithubIcon />
+            <Url
+              href="//github.com/pzatorski/astroreacts"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <GithubIcon />
+            </Url>
           </GithubContainer>
         </Content>
       </LoginContainer>
@@ -34,7 +42,9 @@ const LoginBlock = () => (
 
 const StyledText = styled(Text)`margin-bottom: 6rem;`;
 
-const StyledInput = styled(Input)`margin-bottom: 4rem;`;
+const StyledInputUser = styled(InputUser)`margin-bottom: 4rem;`;
+
+const StyledInputPassword = styled(InputPassword)`margin-bottom: 4rem;`;
 
 const Content = styled.div`padding-top: 6rem;`;
 

@@ -1,5 +1,13 @@
 # AstroReacts
 
+## Quick Overview
+
+```
+yarn
+
+yarn start
+```
+
 ## Game 
 
 In the Astroreacts game the player flies a spacecraft in an asteroids field. The gamer must avoid flying rocks which is traversed by flying saucers. The player can move using the cursor control keys (arrow keys) on his keyboard and shoot the objects pressing the spacebar.
@@ -14,3 +22,5 @@ You do not need to worry! You can always try again. Your score will be saved and
 
 To design the platform I used Sketch - the digital design toolkit.
 To implement the game I used React and Canvas in es6. React is a JavaScript library for building user interfaces. Using this technology it helps me design simple views for each state in my application. Also declarative views make my code more predictable and easier to debug.
+
+

@@ -46,7 +46,7 @@ const Text = styled.p`
   margin: ${props => props.margin};
 
   /* tablets */
-  @media only screen and (min-width: 480px) and (max-width: 768px) {
+  @media only screen and (min-width: 641px) and (max-width: 1024px) {
     font-size: ${props => {
       switch (props.size) {
         case 'xl':
@@ -86,7 +86,7 @@ const Text = styled.p`
   }
 
   /* phones */
-  @media only screen and (min-width: 320px) and (max-width: 480px) {
+  @media only screen and (min-width: 320px) and (max-width: 640px) {
     font-size: ${props => {
       switch (props.size) {
         case 'xl':

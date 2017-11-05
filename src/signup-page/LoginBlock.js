@@ -44,11 +44,11 @@ const LoginBlock = () => (
 const StyledText = styled(Text)`
   margin-bottom: 2rem;
 
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  @media only screen and (min-width: 641px) and (max-width: 1024px) {
     margin-bottom: 1.5rem;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 768px) {
+  @media only screen and (min-width: 320px) and (max-width: 640px) {
     margin-bottom: 1rem;
   }
 `;
@@ -60,11 +60,11 @@ const StyledInputPassword = styled(InputPassword)`margin-bottom: 2rem;`;
 const Content = styled.div`
   padding-top: 8rem;
 
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  @media only screen and (min-width: 641px) and (max-width: 1024px) {
     padding-top: 7rem;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 768px) {
+  @media only screen and (min-width: 320px) and (max-width: 640px) {
     padding-top: 6rem;
   }
 `;
@@ -86,7 +86,7 @@ const GithubContainer = styled.div`
   -moz-transition: 0.2s ease-in-out;
   -webkit-transition: 0.2s ease-in-out;
 
-  @media only screen and (min-width: 320px) and (max-width: 768px) {
+  @media only screen and (min-width: 320px) and (max-width: 640px) {
     bottom: 1rem;
     right: 1rem;
   }
@@ -107,12 +107,12 @@ const LoginContainer = styled.div`
   align-items: center;
   flex-direction: column;
 
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  @media only screen and (min-width: 641px) and (max-width: 1024px) {
     height: 33rem;
     width: 26rem;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 768px) {
+  @media only screen and (min-width: 320px) and (max-width: 640px) {
     height: 30rem;
     width: 20rem;
   }

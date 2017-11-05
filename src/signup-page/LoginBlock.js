@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Text from '../components/Text';
+import Column from '../components/Column';
 import LoginIcon from '../components/LoginIcon';
 import GithubIcon from '../components/GithubIcon';
 import InputPassword from '../components/InputPassword';
@@ -40,24 +41,38 @@ const LoginBlock = () => (
   </Container>
 );
 
-const StyledText = styled(Text)`margin-bottom: 2rem;`;
+const StyledText = styled(Text)`
+  margin-bottom: 2rem;
+
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    margin-bottom: 1.5rem;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
+`;
 
 const StyledInputUser = styled(InputUser)`margin-bottom: 1rem;`;
 
 const StyledInputPassword = styled(InputPassword)`margin-bottom: 2rem;`;
 
-const Content = styled.div`padding-top: 8rem;`;
+const Content = styled.div`
+  padding-top: 8rem;
+
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    padding-top: 7rem;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    padding-top: 6rem;
+  }
+`;
 
 const Centered = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const Column = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: column;
 `;
 
 const GithubContainer = styled.div`
@@ -70,6 +85,11 @@ const GithubContainer = styled.div`
   transition: 0.2s ease-in-out;
   -moz-transition: 0.2s ease-in-out;
   -webkit-transition: 0.2s ease-in-out;
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    bottom: 1rem;
+    right: 1rem;
+  }
 
   &:hover {
     border: 2px solid #ffffff;
@@ -86,6 +106,16 @@ const LoginContainer = styled.div`
   background-color: rgba(255, 173, 173, 0.1);
   align-items: center;
   flex-direction: column;
+
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    height: 33rem;
+    width: 26rem;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    height: 30rem;
+    width: 20rem;
+  }
 `;
 
 const LogoContainer = styled.div`

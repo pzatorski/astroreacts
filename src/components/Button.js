@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import Text from './Text';
 
-const Button = ({ text }) => (
-  <ButtonBase>
+const Button = ({ text, secondary }) => (
+  <ButtonBase secondary={secondary}>
     <Text bold size="xs" color="white">
       {text}
     </Text>
@@ -13,15 +13,17 @@ const Button = ({ text }) => (
 
 const ButtonBase = styled.button`
   display: flex;
-  border: 0;
+  justify-content: center;
   outline: none;
-  background-color: rgb(189, 96, 100);
+  background-color: ${({ secondary }) =>
+    secondary ? 'transparent' : `rgb(189, 96, 100)`};
   height: 3rem;
-  width: 10rem;
+  padding: 0rem 2.5rem;
+  margin: 0rem 0.5rem;
+  border: ${({ secondary }) => (secondary ? '2px solid #fff' : 0)};
   border-radius: 30px;
   color: rgb(40, 45, 50);
   cursor: pointer;
-  justify-content: center;
 
   transition: all 0.5s;
   transition-timing-function: cubic-bezier(0.2, 3, 0.4, 1);
@@ -33,6 +35,11 @@ const ButtonBase = styled.button`
 
   &:active {
     transform: scale(1.05, 1.05);
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 640px) {
+    height: 2.5rem;
+    padding: 0rem 1.5rem;
   }
 `;
 

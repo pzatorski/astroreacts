@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const InputUser = styled.input.attrs({
   // we can define static props
-  type: 'login',
+  type: 'text',
 
   // or we can define dynamic ones
   margin: props => props.size || '1em',

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Text from '../components/Text';
+import Column from '../components/Column';
 import LoginIcon from '../components/LoginIcon';
 import GithubIcon from '../components/GithubIcon';
 import InputPassword from '../components/InputPassword';
@@ -23,7 +24,7 @@ const LoginBlock = () => (
             </StyledText>
             <StyledInputUser placeholder="Username" />
             <StyledInputPassword placeholder="Password" />
-            <Button>Login</Button>
+            <Button text="Login" />
           </Centered>
           <GithubContainer>
             <Url
@@ -40,30 +41,60 @@ const LoginBlock = () => (
   </Container>
 );
 
-const StyledText = styled(Text)`margin-bottom: 6rem;`;
+const StyledText = styled(Text)`
+  margin-bottom: 2rem;
 
-const StyledInputUser = styled(InputUser)`margin-bottom: 4rem;`;
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    margin-bottom: 1.5rem;
+  }
 
-const StyledInputPassword = styled(InputPassword)`margin-bottom: 4rem;`;
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
+`;
 
-const Content = styled.div`padding-top: 6rem;`;
+const StyledInputUser = styled(InputUser)`margin-bottom: 1rem;`;
+
+const StyledInputPassword = styled(InputPassword)`margin-bottom: 2rem;`;
+
+const Content = styled.div`
+  padding-top: 8rem;
+
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    padding-top: 7rem;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    padding-top: 6rem;
+  }
+`;
 
 const Centered = styled.div`
   display: flex;
-  position: relative;
   flex-direction: column;
-`;
-
-const Column = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: column;
+  align-items: center;
 `;
 
 const GithubContainer = styled.div`
   position: absolute;
   bottom: 2rem;
   right: 2rem;
+  border: 2px solid transparent;
+  border-radius: 50%;
+
+  transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  &:hover {
+    border: 2px solid #ffffff;
+    background: #ffffff;
+  }
 `;
 
 const LoginContainer = styled.div`
@@ -76,9 +107,15 @@ const LoginContainer = styled.div`
   align-items: center;
   flex-direction: column;
 
-  transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -webkit-transition: 0.25s ease-in-out;
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    height: 33rem;
+    width: 26rem;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    height: 30rem;
+    width: 20rem;
+  }
 `;
 
 const LogoContainer = styled.div`

@@ -14,6 +14,7 @@ const Header = () => (
 const Container = styled.div`
   display: flex;
   flex: 1;
+  padding-top: 8rem;
   justify-content: center;
   align-items: center;
 `;

@@ -4,30 +4,33 @@ import styled from 'styled-components';
 import Text from '../components/Text';
 import Column from '../components/Column';
 import ScrollIndicator from '../components/ScrollIndicator';
+import MainMargin from '../components/MainMargin';
+import ContentWrapper from '../components/ContentWrapper';
 
 const Header = () => (
   <Content>
-    <Container />
-    <Container>
-      <Margin>
-        <Column>
-          <Container>
-            <Text size="xl" color="white">
-              AstroReacts
-            </Text>
-          </Container>
-          <Container>
-            <TextContent>
-              <Text size="xs" color="white">
-                In the Astroreacts game the player flies a spacecraft in an
-                asteroids field. The gamer must avoid flying rocks which is
-                traversed by flying saucers.
+    <ContentWrapper>
+      <MainMargin>
+        <Container>
+          <Column>
+            <Container>
+              <Text size="xl" color="white">
+                AstroReacts
               </Text>
-            </TextContent>
-          </Container>
-        </Column>
-      </Margin>
-    </Container>
+            </Container>
+            <Container>
+              <TextContent>
+                <Text size="xs" color="white">
+                  In the Astroreacts game the player flies a spacecraft in an
+                  asteroids field. The gamer must avoid flying rocks which is
+                  traversed by flying saucers.
+                </Text>
+              </TextContent>
+            </Container>
+          </Column>
+        </Container>
+      </MainMargin>
+    </ContentWrapper>
     <ScrollContainer>
       <StyledText color="white">Read more</StyledText>
       <ScrollIndicator />
@@ -39,7 +42,29 @@ const Container = styled.div`
   display: flex;
   felx: 1;
   width: 100%;
+  justify-content: center;
   align-items: center;
+
+  /* Fade in animation when content loads */
+
+  opacity: 0;
+  -webkit-animation: fadein ease-in 1s; /* Safari, Chrome */
+  -moz-animation: fadein ease-in 1s; /* Firefox */
+  -ms-animation: fadein ease-in 1s; /* Internet Explorer */
+  -o-animation: fadein ease-in 1s; /* Opera */
+  animation: fadein ease-in 1s;
+
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 const Content = styled.div`
@@ -55,15 +80,42 @@ const ScrollContainer = styled.div`
   width: 100%;
   bottom: 3rem;
   align-items: center;
+
+  /* Fade in animation when content loads */
+
+  opacity: 0;
+  -webkit-animation: fadein ease-in 1s; /* Safari, Chrome */
+  -moz-animation: fadein ease-in 1s; /* Firefox */
+  -ms-animation: fadein ease-in 1s; /* Internet Explorer */
+  -o-animation: fadein ease-in 1s; /* Opera */
+  animation: fadein ease-in 1s;
+
+  animation-fill-mode: forwards;
+  animation-duration: 1.5s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 const TextContent = styled.div`
   margin-top: 2rem;
   margin-left: auto;
   max-width: 30rem;
-`;
 
-const Margin = styled.div`margin-right: 4rem;`;
+  @media only screen and (min-width: 641px) and (max-width: 1024px) {
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 640px) {
+    max-width: 100%;
+  }
+`;
 
 const StyledText = styled(Text)`margin-bottom: 0.5rem;`;
 

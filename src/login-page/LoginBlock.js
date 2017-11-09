@@ -9,6 +9,8 @@ import InputPassword from '../components/InputPassword';
 import InputUser from '../components/InputUser';
 import Button from '../components/Button';
 import Url from '../components/Url';
+import TextLink from '../components/TextLink';
+import StyledLink from '../components/StyledLink';
 
 const LoginBlock = () => (
   <Container>
@@ -20,11 +22,18 @@ const LoginBlock = () => (
         <Content>
           <Centered>
             <StyledText size="m" bold color="#FE7483">
-              Member Login
+              Log in
             </StyledText>
             <StyledInputUser placeholder="Username" />
             <StyledInputPassword placeholder="Password" />
-            <Button text="Login" />
+            <MarginBottom>
+              <StyledLink to="/game">
+                <Button text="Login" />
+              </StyledLink>
+            </MarginBottom>
+            <StyledLink to="/sign-up">
+              <TextLink text="Register" color="#fff" />
+            </StyledLink>
           </Centered>
           <GithubContainer>
             <Url
@@ -40,6 +49,8 @@ const LoginBlock = () => (
     </Column>
   </Container>
 );
+
+const MarginBottom = styled.div`margin-bottom: 1rem;`;
 
 const StyledText = styled(Text)`
   margin-bottom: 2rem;
@@ -136,6 +147,27 @@ const Container = styled.div`
   flex: 5;
   justify-content: center;
   align-items: center;
+
+  /* Fade in animation when content loads */
+
+  opacity: 0;
+  -webkit-animation: fadein ease-in 0.9s; /* Safari, Chrome */
+  -moz-animation: fadein ease-in 0.9s; /* Firefox */
+  -ms-animation: fadein ease-in 0.9s; /* Internet Explorer */
+  -o-animation: fadein ease-in 0.9s; /* Opera */
+  animation: fadein ease-in 0.9s;
+
+  animation-fill-mode: forwards;
+  animation-duration: 0.9s;
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export default LoginBlock;

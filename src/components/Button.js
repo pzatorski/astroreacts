@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import Text from './Text';
 
-const Button = ({ text, secondary }) => (
-  <ButtonBase secondary={secondary}>
-    <Text bold size="xs" color="white">
+const Button = ({ text, secondary, color, textColor }) => (
+  <ButtonBase secondary={secondary} color={color}>
+    <Text bold size="xs" color={textColor || '#fff'}>
       {text}
     </Text>
   </ButtonBase>
@@ -15,8 +15,8 @@ const ButtonBase = styled.button`
   display: flex;
   justify-content: center;
   outline: none;
-  background-color: ${({ secondary }) =>
-    secondary ? 'transparent' : `rgb(189, 96, 100)`};
+  background-color: ${({ secondary, color }) =>
+    (secondary && 'transparent') || color || `rgb(189, 96, 100)`};
   height: 3rem;
   padding: 0rem 2.5rem;
   margin: 0rem 0.5rem;

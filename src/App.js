@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import SignUp from './signup-page/index';
 import LandingPage from './landing-page/index';
+import Login from './login-page/index';
+import SignUp from './signup-page/index';
+import Game from './game/index';
+import Results from './results/index';
 
 class App extends Component {
   render() {
@@ -10,7 +13,10 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/login" component={SignUp} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/sign-up" component={SignUp} />
+          <Route exact path="/game" component={Game} />
+          <Route exact path="/results" component={Results} />
         </div>
       </Router>
     );

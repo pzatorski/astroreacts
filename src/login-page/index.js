@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // import Header from './Header';
-import SignUpBlock from './SignUpBlock';
+import LoginBlock from './LoginBlock';
 
 import Menu from '../components/Menu';
 import ScrollToTop from '../components/ScrollToTop';
@@ -28,13 +28,13 @@ You will see more of that components in other files.
 When I create Component I create "small blocks" on that point my code is clear.
 */
 
-const SignUp = () => (
+const Login = () => (
   <div>
     <ScrollToTop />
     <BackgroundImage height="70rem" image={AstroImage}>
       <LoginContent>
         <Menu />
-        <SignUpBlock />
+        <LoginBlock />
       </LoginContent>
     </BackgroundImage>
   </div>
@@ -46,4 +46,4 @@ const LoginContent = styled.div`
   width: 100%;
 `;
 
-export default SignUp;
+export default Login;

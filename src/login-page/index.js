@@ -13,7 +13,7 @@ import AstroImage from '../assets/images/diego-ph-asteroids.jpg';
 
 I name Components the same way how I will name class in html.
 
-All of the components which SignUp returns are html types
+All of the components which Login returns are html types
 Using library 'styled-components' I am able to assign css style for each component
 For example:
 

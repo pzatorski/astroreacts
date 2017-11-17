@@ -18,6 +18,7 @@ const Container = styled.div`
   width: 1.4rem;
   border: 2px solid #ffffff;
   border-radius: 30px;
+  cursor: pointer;
 `;
 
 export default ScrollIndicator;

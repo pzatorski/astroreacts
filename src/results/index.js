@@ -1,12 +1,17 @@
 import React from 'react';
 
+import GameImage from '../assets/images/game-galaxy.jpg';
+
 import Menu from '../components/Menu';
-import ScrollToTop from '../components/ScrollToTop';
+import BackgroundImage from '../components/BackgroundImage';
+import RecordTable from './RecordTable';
 
 const Results = () => (
   <div>
-    <ScrollToTop />
-    <Menu />
+    <BackgroundImage height="100vh" image={GameImage}>
+      <Menu />
+      <RecordTable />
+    </BackgroundImage>
   </div>
 );
 

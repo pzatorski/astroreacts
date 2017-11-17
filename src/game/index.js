@@ -1,12 +1,15 @@
 import React from 'react';
 
+import GameBlock from './GameBlock';
+
 import Menu from '../components/Menu';
-import ScrollToTop from '../components/ScrollToTop';
+import BackgroundImage from '../components/BackgroundImage';
+import GameImage from '../assets/images/game-galaxy.jpg';
 
 const Game = () => (
   <div>
-    <ScrollToTop />
     <Menu />
+    <GameBlock />
   </div>
 );
 

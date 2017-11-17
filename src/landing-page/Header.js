@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Text from '../components/Text';
@@ -7,36 +7,43 @@ import ScrollIndicator from '../components/ScrollIndicator';
 import MainMargin from '../components/MainMargin';
 import ContentWrapper from '../components/ContentWrapper';
 
-const Header = () => (
-  <Content>
-    <ContentWrapper>
-      <MainMargin>
-        <Container>
-          <Column>
+class Header extends Component {
+  scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+  render() {
+    return (
+      <Content>
+        <ContentWrapper>
+          <MainMargin>
             <Container>
-              <Text size="xl" color="white">
-                AstroReacts
-              </Text>
+              <Column>
+                <Container>
+                  <Text size="xl" color="white">
+                    AstroReacts
+                  </Text>
+                </Container>
+                <Container>
+                  <TextContent>
+                    <Text size="xs" color="white">
+                      In the Astroreacts game the player flies a spacecraft in
+                      an asteroids field. The gamer must avoid flying rocks
+                      which is traversed by flying saucers.
+                    </Text>
+                  </TextContent>
+                </Container>
+              </Column>
             </Container>
-            <Container>
-              <TextContent>
-                <Text size="xs" color="white">
-                  In the Astroreacts game the player flies a spacecraft in an
-                  asteroids field. The gamer must avoid flying rocks which is
-                  traversed by flying saucers.
-                </Text>
-              </TextContent>
-            </Container>
-          </Column>
-        </Container>
-      </MainMargin>
-    </ContentWrapper>
-    <ScrollContainer>
-      <StyledText color="white">Read more</StyledText>
-      <ScrollIndicator />
-    </ScrollContainer>
-  </Content>
-);
+          </MainMargin>
+        </ContentWrapper>
+        <ScrollContainer onClick={this.scrollToBottom}>
+          <StyledText color="white">Read more</StyledText>
+          <ScrollIndicator />
+        </ScrollContainer>
+      </Content>
+    );
+  }
+}
 
 const Container = styled.div`
   display: flex;

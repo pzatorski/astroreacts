@@ -28,17 +28,32 @@ You will see more of that components in other files.
 When I create Component I create "small blocks" on that point my code is clear.
 */
 
-const SignUp = () => (
-  <div>
-    <ScrollToTop />
-    <BackgroundImage height="70rem" image={AstroImage}>
-      <LoginContent>
-        <Menu />
-        <SignUpBlock />
-      </LoginContent>
-    </BackgroundImage>
-  </div>
-);
+class SignUp extends React.Component {
+  componentWillMount() {
+    if (localStorage.LoggedIn) {
+      this.props.history.goBack();
+    }
+  }
+
+  submit = data => {
+    // localStorage.clear();
+    localStorage[data.email] = JSON.stringify(data);
+  };
+
+  render() {
+    return (
+      <div>
+        <ScrollToTop />
+        <BackgroundImage height="70rem" image={AstroImage}>
+          <LoginContent>
+            <Menu />
+            <SignUpBlock submit={this.submit} />
+          </LoginContent>
+        </BackgroundImage>
+      </div>
+    );
+  }
+}
 
 const LoginContent = styled.div`
   display: flex;

@@ -3,93 +3,57 @@ import styled from 'styled-components';
 
 import Column from '../components/Column';
 import Text from '../components/Text';
+import TableRow from '../components/TableRow';
 
-const RecordTable = () => (
-  <Container>
-    <Column>
-      <TableBlock>
-        <Tr>
-          <Th>
-            <Text bold size="s" color="white">
-              Place
-            </Text>
-          </Th>
-          <Th>
-            <Text bold size="s" color="white">
-              User
-            </Text>
-          </Th>
-          <Th>
-            <Text bold size="s" color="white">
-              Points
-            </Text>
-          </Th>
-        </Tr>
-        <Tr>
-          <Td>
-            <Text size="xs" color="white">
-              1.
-            </Text>
-          </Td>
-          <Td>
-            <Text size="xs" color="white">
-              Govanni
-            </Text>
-          </Td>
-          <Td>
-            <Text size="xs" color="white">
-              360
-            </Text>
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>
-            <Text size="xs" color="white">
-              2.
-            </Text>
-          </Td>
-          <Td>
-            <Text size="xs" color="white">
-              David
-            </Text>
-          </Td>
-          <Td>
-            <Text size="xs" color="white">
-              330
-            </Text>
-          </Td>
-        </Tr>
-        <Tr>
-          <Td>
-            <Text size="xs" color="white">
-              3.
-            </Text>
-          </Td>
-          <Td>
-            <Text size="xs" color="white">
-              Patryk
-            </Text>
-          </Td>
-          <Td>
-            <Text size="xs" color="white">
-              310
-            </Text>
-          </Td>
-        </Tr>
-      </TableBlock>
-    </Column>
-  </Container>
-);
+class RecordTable extends React.Component {
+  render() {
+    const records = JSON.parse(localStorage.records);
 
-const Td = styled.td`
-  text-align: left;
-  padding: 1rem 2rem;
-`;
+    records.sort(function(a, b) {
+      return b.topScore - a.topScore;
+    });
+
+    const sortedScoreData = records.map(function(user, index) {
+      return (
+        <TableRow
+          key={index + 1}
+          place={index + 1}
+          username={user.username}
+          topScore={user.topScore}
+        />
+      );
+    });
+
+    return (
+      <Container>
+        <Column>
+          <TableBlock>
+            <thead>
+              <Tr>
+                <Th noBorderLeft>
+                  <Text color="white">Place</Text>
+                </Th>
+                <Th>
+                  <Text color="white">Username</Text>
+                </Th>
+                <Th>
+                  <Text color="white">Points</Text>
+                </Th>
+              </Tr>
+            </thead>
+            <tbody>{sortedScoreData}</tbody>
+          </TableBlock>
+        </Column>
+      </Container>
+    );
+  }
+}
 
 const Th = styled.th`
   text-align: left;
   padding: 2rem;
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: ${({ noBorderLeft }) => noBorderLeft || '1px solid #fff'};
 `;
 
 const Tr = styled.tr``;

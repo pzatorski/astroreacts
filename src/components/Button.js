@@ -3,9 +3,13 @@ import styled from 'styled-components';
 
 import Text from './Text';
 
-const Button = ({ text, secondary, color, textColor }) => (
-  <ButtonBase secondary={secondary} color={color}>
-    <Text bold size="xs" color={textColor || '#fff'}>
+const Button = ({ text, secondary, color, textColor, loggedOut, gameOver }) => (
+  <ButtonBase
+    secondary={secondary}
+    color={color}
+    onClick={loggedOut || gameOver}
+  >
+    <Text bold size="xs" color={textColor ? textColor : '#fff'}>
       {text}
     </Text>
   </ButtonBase>

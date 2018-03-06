@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Text from '../components/Text';
+import SignUpForm from './SignUpForm';
+
 import Column from '../components/Column';
 import RegisterIcon from '../components/RegisterIcon';
 import GithubIcon from '../components/GithubIcon';
-import InputPassword from '../components/InputPassword';
-import InputUser from '../components/InputUser';
-import Button from '../components/Button';
 import Url from '../components/Url';
 
-const SignUpBlock = () => (
+const SignUpBlock = ({ submit }) => (
   <Container>
     <Column>
       <LoginContainer>
@@ -18,14 +16,7 @@ const SignUpBlock = () => (
           <RegisterIcon />
         </LogoContainer>
         <Content>
-          <Centered>
-            <StyledText size="m" bold color="#FE7483">
-              Sign up
-            </StyledText>
-            <StyledInputUser placeholder="Username" />
-            <StyledInputPassword placeholder="Password" />
-            <Button text="Sign up" />
-          </Centered>
+          <SignUpForm submit={submit} />
           <GithubContainer>
             <Url
               href="//github.com/pzatorski/astroreacts"
@@ -41,22 +32,6 @@ const SignUpBlock = () => (
   </Container>
 );
 
-const StyledText = styled(Text)`
-  margin-bottom: 2rem;
-
-  @media only screen and (min-width: 641px) and (max-width: 1024px) {
-    margin-bottom: 1.5rem;
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 640px) {
-    margin-bottom: 1rem;
-  }
-`;
-
-const StyledInputUser = styled(InputUser)`margin-bottom: 1rem;`;
-
-const StyledInputPassword = styled(InputPassword)`margin-bottom: 2rem;`;
-
 const Content = styled.div`
   padding-top: 8rem;
 
@@ -67,12 +42,6 @@ const Content = styled.div`
   @media only screen and (min-width: 320px) and (max-width: 640px) {
     padding-top: 6rem;
   }
-`;
-
-const Centered = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
 const GithubContainer = styled.div`
@@ -99,7 +68,7 @@ const GithubContainer = styled.div`
 
 const LoginContainer = styled.div`
   display: flex;
-  height: 35rem;
+  height: 44rem;
   width: 28rem;
   border-radius: 10px;
   box-shadow: 20px 20px 25rem #000000;
@@ -108,12 +77,12 @@ const LoginContainer = styled.div`
   flex-direction: column;
 
   @media only screen and (min-width: 641px) and (max-width: 1024px) {
-    height: 33rem;
+    height: 41rem;
     width: 26rem;
   }
 
   @media only screen and (min-width: 320px) and (max-width: 640px) {
-    height: 30rem;
+    height: 40rem;
     width: 20rem;
   }
 `;

@@ -15,8 +15,8 @@ const Content = () => (
           <StyledText bold center size="m">
             Crash through the asteroid field and own the rift!
           </StyledText>
-          <StyledLink to="/login">
-            <Button text="Let's play" />
+          <StyledLink to={localStorage.LoggedIn ? '/game' : '/login'}>
+            <Button text="Let's play" onClick={() => {}} />
           </StyledLink>
         </Centered>
       </Padding>
@@ -35,6 +35,8 @@ const StyledText = styled(Text)`
   max-width: 40rem;
 `;
 
-const Padding = styled.div`padding: 4rem 0rem;`;
+const Padding = styled.div`
+  padding: 4rem 0rem;
+`;
 
 export default Content;

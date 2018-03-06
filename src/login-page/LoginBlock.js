@@ -1,18 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Text from '../components/Text';
+import LoginForm from './LoginForm';
+
 import Column from '../components/Column';
 import LoginIcon from '../components/LoginIcon';
 import GithubIcon from '../components/GithubIcon';
-import InputPassword from '../components/InputPassword';
-import InputUser from '../components/InputUser';
-import Button from '../components/Button';
 import Url from '../components/Url';
 import TextLink from '../components/TextLink';
 import StyledLink from '../components/StyledLink';
 
-const LoginBlock = () => (
+const LoginBlock = ({ submit }) => (
   <Container>
     <Column>
       <LoginContainer>
@@ -21,17 +19,8 @@ const LoginBlock = () => (
         </LogoContainer>
         <Content>
           <Centered>
-            <StyledText size="m" bold color="#FE7483">
-              Log in
-            </StyledText>
-            <StyledInputUser placeholder="Username" />
-            <StyledInputPassword placeholder="Password" />
-            <MarginBottom>
-              <StyledLink to="/game">
-                <Button text="Login" />
-              </StyledLink>
-            </MarginBottom>
-            <StyledLink to="/sign-up">
+            <LoginForm submit={submit} />
+            <StyledLink style={{ marginTop: '1rem' }} to="/sign-up">
               <TextLink text="Register" color="#fff" />
             </StyledLink>
           </Centered>
@@ -49,24 +38,6 @@ const LoginBlock = () => (
     </Column>
   </Container>
 );
-
-const MarginBottom = styled.div`margin-bottom: 1rem;`;
-
-const StyledText = styled(Text)`
-  margin-bottom: 2rem;
-
-  @media only screen and (min-width: 641px) and (max-width: 1024px) {
-    margin-bottom: 1.5rem;
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 640px) {
-    margin-bottom: 1rem;
-  }
-`;
-
-const StyledInputUser = styled(InputUser)`margin-bottom: 1rem;`;
-
-const StyledInputPassword = styled(InputPassword)`margin-bottom: 2rem;`;
 
 const Content = styled.div`
   padding-top: 8rem;

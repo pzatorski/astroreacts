@@ -9,7 +9,10 @@ import ContentWrapper from '../components/ContentWrapper';
 
 class Header extends Component {
   scrollToBottom() {
-    window.scrollTo(0, document.body.scrollHeight);
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
   }
   render() {
     return (
@@ -124,6 +127,8 @@ const TextContent = styled.div`
   }
 `;
 
-const StyledText = styled(Text)`margin-bottom: 0.5rem;`;
+const StyledText = styled(Text)`
+  margin-bottom: 0.5rem;
+`;
 
 export default Header;

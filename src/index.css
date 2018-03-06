@@ -161,3 +161,93 @@ canvas {
   width: 100%;
   height: calc(100% - 5.5rem);
 }
+
+/* MOBILE MENU */
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 32px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #ffffff;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 32px;
+  width: 32px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: rgba(20, 80, 110, 0.9);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-menu-wrap {
+  top: 0;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* GAME STYLE */
+
+canvas {
+  display: block;
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.current-score {
+  left: 20px;
+}
+.top-score {
+  right: 20px;
+}
+.score {
+  display: block;
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+  font-size: 20px;
+}
+
+.endgame {
+  position: absolute;
+  top: calc(50% + 4.5rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px;
+  z-index: 1;
+  text-align: center;
+}

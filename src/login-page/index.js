@@ -28,17 +28,49 @@ You will see more of that components in other files.
 When I create Component I create "small blocks" on that point my code is clear.
 */
 
-const Login = () => (
-  <div>
-    <ScrollToTop />
-    <BackgroundImage height="70rem" image={AstroImage}>
-      <LoginContent>
-        <Menu />
-        <LoginBlock />
-      </LoginContent>
-    </BackgroundImage>
-  </div>
-);
+class Login extends React.Component {
+  componentWillMount() {
+    if (localStorage.LoggedIn) {
+      this.props.history.goBack();
+    }
+  }
+
+  submit = data => {
+    if (localStorage[data.email]) {
+      const parsedUser = JSON.parse(localStorage[data.email]) || [];
+
+      if (
+        parsedUser.email === data.email &&
+        parsedUser.password === data.password
+      ) {
+        alert('Good luck and have fun!');
+        this.props.history.push('/game');
+        localStorage.LoggedIn = parsedUser.email;
+      } else {
+        alert('Wrong login or password');
+      }
+    } else {
+      alert('Wrong login or password');
+    }
+
+    // console.log(localStorage);
+  };
+
+  render() {
+    return (
+      <div>
+        <ScrollToTop />
+        <BackgroundImage height="70rem" image={AstroImage}>
+          <LoginContent>
+            <Menu />
+            {/* I pass submit function defined above render() via props to Component LoginBlock */}
+            <LoginBlock submit={this.submit} />
+          </LoginContent>
+        </BackgroundImage>
+      </div>
+    );
+  }
+}
 
 const LoginContent = styled.div`
   display: flex;

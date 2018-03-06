@@ -3,11 +3,19 @@ import styled from 'styled-components';
 
 import Text from './Text';
 
-const TextLink = ({ text, color }) => (
+const TextLink = ({ text, color, loggedOut }) => (
   <LinkBase>
-    <StyledText bold size="xs" color={color}>
-      {text}
-    </StyledText>
+    {loggedOut ? (
+      <a onClick={loggedOut}>
+        <StyledText bold size="xs" color={color}>
+          {text}
+        </StyledText>
+      </a>
+    ) : (
+      <StyledText bold size="xs" color={color}>
+        {text}
+      </StyledText>
+    )}
   </LinkBase>
 );
 
